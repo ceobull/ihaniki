@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>ihaniki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- ============ MAIN MENU ============ -->
+  <section id="screen-menu" class="screen active">
+    <div class="noise"></div>
+    <div class="menu-wrap">
+      <div class="logo-block">
+        <h1 class="logo">ihaniki</h1>
+        <p class="tagline">выживи в чаще. дерись на арене. качай отряд.</p>
+      </div>
+
+      <div class="balance-pill">
+        <span class="coin-dot"></span>
+        <span id="menu-coins">0</span>
+      </div>
+
+      <nav class="menu-nav">
+        <button class="btn btn-primary" data-goto="screen-game" id="btn-fight">В бой</button>
+        <button class="btn" data-goto="screen-characters">Персонажи</button>
+        <button class="btn" data-goto="screen-shop">Магазин</button>
+      </nav>
+
+      <p class="hint">WASD — движение&ensp;·&ensp;ЛКМ — атака&ensp;·&ensp;E — собрать&ensp;·&ensp;Q — стена</p>
+    </div>
+  </section>
+
+  <!-- ============ CHARACTERS ============ -->
+  <section id="screen-characters" class="screen">
+    <header class="subheader">
+      <button class="btn btn-ghost back-btn" data-goto="screen-menu">← Меню</button>
+      <h2>Персонажи</h2>
+      <div class="balance-pill small"><span class="coin-dot"></span><span id="chars-coins">0</span></div>
+    </header>
+    <div id="character-grid" class="grid"></div>
+  </section>
+
+  <!-- ============ SHOP ============ -->
+  <section id="screen-shop" class="screen">
+    <header class="subheader">
+      <button class="btn btn-ghost back-btn" data-goto="screen-menu">← Меню</button>
+      <h2>Магазин</h2>
+      <div class="balance-pill small"><span class="coin-dot"></span><span id="shop-coins">0</span></div>
+    </header>
+    <div class="box-row" id="box-row"></div>
+
+    <div id="reveal-overlay" class="reveal-overlay hidden">
+      <div class="reveal-card" id="reveal-card">
+        <div class="reveal-glow" id="reveal-glow"></div>
+        <div class="reveal-content" id="reveal-content"></div>
+      </div>
+      <button class="btn btn-primary reveal-close" id="reveal-close">Продолжить</button>
+    </div>
+  </section>
+
+  <!-- ============ GAME ============ -->
+  <section id="screen-game" class="screen">
+    <div class="canvas-wrap">
+      <canvas id="game-canvas" width="960" height="600"></canvas>
+
+      <div class="hud">
+        <div class="hud-top-left">
+          <div class="hp-bar-wrap"><div class="hp-bar" id="hp-bar"></div></div>
+          <div class="hud-row"><span id="hud-char-name">—</span>&ensp;·&ensp;ур. <span id="hud-level">1</span></div>
+        </div>
+
+        <div class="hud-top-right">
+          <div class="res-pill">🌲 <span id="hud-wood">0</span></div>
+          <div class="res-pill">🪨 <span id="hud-stone">0</span></div>
+          <div class="wave-pill">Волна <span id="hud-wave">1</span></div>
+        </div>
+
+        <div class="hud-bottom-left">
+          <div class="coin-pill">◆ <span id="hud-run-coins">0</span></div>
+        </div>
+
+        <button class="btn btn-ghost hud-exit" id="btn-exit-game">Выйти</button>
+      </div>
+
+      <div id="wave-banner" class="wave-banner hidden"></div>
+    </div>
+  </section>
+
+  <!-- ============ GAME OVER ============ -->
+  <section id="screen-gameover" class="screen">
+    <div class="gameover-wrap">
+      <h2 id="gameover-title">Ты пал в чаще</h2>
+      <p class="go-line">Волна: <strong id="go-wave">1</strong></p>
+      <p class="go-line">Заработано за вылазку: <strong id="go-coins">0</strong> монет</p>
+      <button class="btn btn-primary" id="go-menu-btn">В меню</button>
+    </div>
+  </section>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
