@@ -10,10 +10,10 @@
 // на экране "Профиль" появится рабочая форма регистрации/входа.
 
 const firebaseConfig = {
-  apiKey: "ВСТАВЬ_СЮДА_apiKey",
-  authDomain: "ВСТАВЬ_СЮДА.firebaseapp.com",
-  projectId: "ВСТАВЬ_СЮДА",
-  storageBucket: "ВСТАВЬ_СЮДА.appspot.com",
-  messagingSenderId: "ВСТАВЬ_СЮДА",
-  appId: "ВСТАВЬ_СЮДА",
+  apiKey: "AIzaSyAS9t67kLXp3ISDazgC4_kIsgXlFGEMOUQ",
+  authDomain: "ihaniki.firebaseapp.com",
+  projectId: "ihaniki",
+  storageBucket: "ihaniki.firebasestorage.app",
+  messagingSenderId: "8633494403",
+  appId: "1:8633494403:web:e53411fc689ec12633e4b6",
 };
